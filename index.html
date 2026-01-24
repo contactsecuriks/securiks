@@ -32,7 +32,7 @@
         }
 
      .hero-logo {
-    max-width: 900px;   /* ← logo beaucoup plus large */
+    max-width: 900px;
     width: 100%;
     height: auto;
     margin-bottom: 40px;
@@ -137,19 +137,21 @@
 
 <!-- ===== BANNIÈRE / HERO ===== -->
 <header class="hero">
-  <div class="hero-text">
-    Intégrateur de solutions de caisse certifiées NF525 pour restaurants et commerces<br>
-    <span style="font-size:16px; color:#ffffff;">
-        Assistance technique de qualité disponible 7 jours sur 7
-    </span>
-</div>
+    <div class="hero-content">
+        <img src="logo-securiks.png" alt="Logo Securiks" class="hero-logo">
 
-   <div class="buttons">
-    <a href="#contact" class="btn">Contact</a>
-    <a href="packs.html" class="btn">Voir nos packs</a>
-    <a href="#devis" class="btn secondary">Demande de devis</a>
-</div>
+        <!-- 🔥 ACCROCHE + ASSISTANCE 7J/7 -->
+        <div class="hero-text">
+            Intégrateur de solutions de caisse certifiées NF525 pour restaurants, bars et commerces<br>
+            <span style="font-size:16px; color:#ffffff;">
+                Assistance technique de qualité disponible 7 jours sur 7
+            </span>
+        </div>
 
+        <div class="buttons">
+            <a href="#contact" class="btn">Contact</a>
+            <a href="#devis" class="btn secondary">Demande de devis</a>
+        </div>
     </div>
 </header>
 
@@ -169,6 +171,12 @@
             <h3>Installation & assistance</h3>
             <p>Mise en service, paramétrage, formation et support technique.</p>
         </div>
+
+        <!-- 🟡 NOUVELLE CARTE ASSISTANCE 7J/7 -->
+        <div class="card">
+            <h3>Assistance 7j/7</h3>
+            <p>Support technique réactif disponible 7 jours sur 7 pour vous accompagner en cas de besoin, même le week-end.</p>
+        </div>
     </div>
 </section>
 
@@ -183,6 +191,12 @@
 
 <section id="devis">
     <h2>Demande de devis</h2>
+
+    <!-- 🟢 TEXTE RASSURANT AVANT FORMULAIRE -->
+    <p style="text-align:center; color:#d4af37; font-size:16px;">
+        Installation professionnelle • Formation incluse • Assistance technique 7j/7
+    </p>
+
  <form action="https://formspree.io/f/xqepnooj" method="POST">
     <input type="text" name="nom" placeholder="Nom / Société" required>
     <input type="email" name="email" placeholder="Email" required>
