@@ -31,12 +31,12 @@
             padding: 40px 20px;
         }
 
-     .hero-logo {
-    max-width: 900px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 40px;
-}
+        .hero-logo {
+            max-width: 900px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 40px;
+        }
 
         .hero-text {
             color: #d4af37;
@@ -47,7 +47,7 @@
         }
 
         .buttons {
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .btn {
@@ -101,29 +101,6 @@
             font-size: 18px;
         }
 
-        form {
-            max-width: 500px;
-            margin: 40px auto 0;
-            text-align: left;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            border: none;
-        }
-
-        button {
-            width: 100%;
-            padding: 14px;
-            background: #d4af37;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
         footer {
             background: #000000;
             text-align: center;
@@ -131,8 +108,72 @@
             font-size: 14px;
             color: #777777;
         }
+
+        /* ===== FORMULAIRE PREMIUM ===== */
+
+        .form-container {
+            background: #1a1a22;
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 550px;
+            margin: 40px auto 0;
+            box-shadow: 0 0 25px rgba(0,0,0,0.4);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #d4af37;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border-radius: 4px;
+            border: 1px solid #333;
+            background: #0f0f14;
+            color: #ffffff;
+            font-size: 15px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #888;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: #d4af37;
+            border: none;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background: #e6c75a;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
+
 <body>
 
 <!-- ===== BANNIÈRE / HERO ===== -->
@@ -140,19 +181,18 @@
     <div class="hero-content">
         <img src="logo-securiks.png" alt="Logo Securiks" class="hero-logo">
 
-        <!-- 🔥 ACCROCHE + ASSISTANCE 7J/7 -->
         <div class="hero-text">
             Intégrateur de solutions de caisse certifiées NF525 pour restaurants et commerces<br>
             <span style="font-size:16px; color:#ffffff;">
-                Service d’assistance dédié et réactif, disponible 7 jours sur 7 de 8h30 à 19h 
+                Service d’assistance dédié et réactif, disponible 7 jours sur 7 de 8h30 à 19h
             </span>
         </div>
 
         <div class="buttons">
-    <a href="#contact" class="btn">Contact</a>
-    <a href="packs.html" class="btn">Voir nos packs</a>
-    <a href="#devis" class="btn secondary">Demande de devis</a>
-</div>
+            <a href="#contact" class="btn">Contact</a>
+            <a href="packs.html" class="btn">Voir nos packs</a>
+            <a href="#devis" class="btn secondary">Demande de devis</a>
+        </div>
     </div>
 </header>
 
@@ -172,8 +212,6 @@
             <h3>Installation & assistance</h3>
             <p>Mise en service, paramétrage, formation et support technique.</p>
         </div>
-
-        <!-- 🟡 NOUVELLE CARTE ASSISTANCE 7J/7 -->
         <div class="card">
             <h3>Assistance 7j/7</h3>
             <p>Support technique réactif disponible 7 jours sur 7 pour vous accompagner en cas de besoin, même le week-end.</p>
@@ -184,7 +222,6 @@
 <section id="contact">
     <h2>Contact</h2>
     <div class="contact">
-        <p><strong></strong></p>
         <p>📞 06 87 88 00 03</p>
         <p>✉️ contact.securiks@gmail.com</p>
     </div>
@@ -193,24 +230,48 @@
 <section id="devis">
     <h2>Demande de devis</h2>
 
-    <!-- 🟢 TEXTE RASSURANT AVANT FORMULAIRE -->
-    <p style="text-align:center; color:#d4af37; font-size:16px;">
-        Installation professionnelle • Formation incluse • Assistance technique 7j/7
+    <p style="text-align:center; color:#ffffff; font-size:15px; margin-bottom:20px;">
+        Réponse rapide garantie • Étude gratuite • Sans engagement
     </p>
 
- <form action="https://formspree.io/f/xqepnooj" method="POST">
-    <input type="text" name="nom" placeholder="Nom / Société" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="tel" name="telephone" placeholder="Téléphone" required>
-    <textarea name="message" rows="5" placeholder="Décrivez votre besoin (activité, caisse, logiciel...)" required></textarea>
+    <p style="text-align:center; color:#d4af37; font-size:16px;">
+        Installation professionnelle • Formation incluse • Assistance technique 7 jours sur 7
+    </p>
 
-    <!-- Options Formspree -->
-    <input type="hidden" name="_subject" value="Nouvelle demande de devis - SECURIKS">
-    <input type="hidden" name="_template" value="table">
-    <input type="text" name="_gotcha" style="display:none">
+    <div class="form-container">
 
-    <button type="submit">Envoyer la demande</button>
-</form>
+        <form action="https://formspree.io/f/xqepnooj" method="POST">
+
+            <div class="form-group">
+                <label>Nom / Société</label>
+                <input type="text" name="nom" placeholder="Nom de l’établissement ou société" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Adresse email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Téléphone</label>
+                <input type="tel" name="telephone" placeholder="Numéro de téléphone" required>
+            </div>
+
+            <div class="form-group">
+                <label>Votre besoin</label>
+                <textarea name="message" rows="5" placeholder="Décrivez votre activité, votre nombre de postes, vos besoins en encaissement..." required></textarea>
+            </div>
+
+            <!-- Options Formspree -->
+            <input type="hidden" name="_subject" value="Nouvelle demande de devis - SECURIKS">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_gotcha" style="display:none">
+
+            <button type="submit" class="form-submit">Envoyer la demande</button>
+
+        </form>
+
+    </div>
 </section>
 
 <footer>
