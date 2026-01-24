@@ -181,13 +181,19 @@
 
 <section id="devis">
     <h2>Demande de devis</h2>
-    <form>
-        <input type="text" placeholder="Nom / Société" required>
-        <input type="email" placeholder="Email" required>
-        <input type="tel" placeholder="Téléphone" required>
-        <textarea rows="5" placeholder="Décrivez votre besoin (activité, caisse, logiciel...)" required></textarea>
-        <button type="submit">Envoyer la demande</button>
-    </form>
+ <form action="https://formspree.io/f/xqepnooj" method="POST">
+    <input type="text" name="nom" placeholder="Nom / Société" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="telephone" placeholder="Téléphone" required>
+    <textarea name="message" rows="5" placeholder="Décrivez votre besoin (activité, caisse, logiciel...)" required></textarea>
+
+    <!-- Options Formspree -->
+    <input type="hidden" name="_subject" value="Nouvelle demande de devis - SECURIKS">
+    <input type="hidden" name="_template" value="table">
+    <input type="text" name="_gotcha" style="display:none">
+
+    <button type="submit">Envoyer la demande</button>
+</form>
 </section>
 
 <footer>
