@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SECURIKS – Solutions d’encaissement-</title>
+    <title>SECURIKS – Solutions d’encaissement</title>
     <meta name="description" content="SECURIKS – Solutions d’encaissement pour professionnels : caisses enregistreuses, logiciels de caisse, installation et assistance.">
 
     <style>
@@ -15,24 +15,34 @@
             line-height: 1.6;
         }
 
-        header {
+        /* ===== HERO / BANNIÈRE ===== */
+        .hero {
+            width: 100%;
+            min-height: 80vh;
             background: #000000;
-            padding: 60px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
         }
 
-        .logo {
-            max-width: 320px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 20px;
+        .hero-content {
+            max-width: 1200px;
+            padding: 40px 20px;
         }
 
-        .banner-text {
+        .hero-logo {
+            max-width: 480px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 25px;
+        }
+
+        .hero-text {
             color: #d4af37;
-            font-size: 20px;
+            font-size: 22px;
             letter-spacing: 1px;
-            margin: 20px 0 40px 0;
+            margin-bottom: 40px;
             font-weight: 500;
         }
 
@@ -57,6 +67,7 @@
             border: 2px solid #d4af37;
         }
 
+        /* ===== CONTENU ===== */
         section {
             padding: 60px 20px;
             max-width: 1000px;
@@ -124,19 +135,23 @@
 </head>
 <body>
 
-<header>
-    <img src="logo-securiks.png" alt="Logo Securiks" class="logo">
+<!-- ===== BANNIÈRE / HERO ===== -->
+<header class="hero">
+    <div class="hero-content">
+        <img src="logo-securiks.png" alt="Logo Securiks" class="hero-logo">
 
-    <div class="banner-text">
-        Solutions d’encaissements et de sécurité
-    </div>
+        <div class="hero-text">
+            Solutions d’encaissements et de sécurité
+        </div>
 
-    <div class="buttons">
-        <a href="#contact" class="btn">Contact</a>
-        <a href="#devis" class="btn secondary">Demande de devis</a>
+        <div class="buttons">
+            <a href="#contact" class="btn">Contact</a>
+            <a href="#devis" class="btn secondary">Demande de devis</a>
+        </div>
     </div>
 </header>
 
+<!-- ===== CONTENU ===== -->
 <section>
     <h2>Nos solutions</h2>
     <div class="services">
