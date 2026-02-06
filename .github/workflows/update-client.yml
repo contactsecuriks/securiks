@@ -1,0 +1,25 @@
+name: Update client page
+
+on:
+  repository_dispatch:
+    types: [update-client]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Write client HTML
+        run: |
+          mkdir -p clients/${{ github.event.client }}
+          echo "${{ github.event.html }}" > clients/${{ github.event.client }}/index.html
+
+      - name: Commit & push
+        run: |
+          git config user.name "auto-caisse"
+          git config user.email "auto@securiks.fr"
+          git add .
+          git commit -m "Update client ${{ github.event.client }}"
+          git push
