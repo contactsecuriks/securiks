@@ -89,7 +89,6 @@ button:hover {
 
   <button class="logout" onclick="logout()">Déconnexion</button>
 </div>
-
 <script>
 // ===== IDENTIFIANTS (UN PAR CLIENT) =====
 const ADMIN = "admin";
@@ -99,25 +98,34 @@ const PASSWORD = "dupont2026";   // 🔴 À CHANGER POUR CHAQUE CLIENT
 function login() {
   const u = document.getElementById("user").value;
   const p = document.getElementById("pass").value;
- else {
+
+  if (u === ADMIN && p === PASSWORD) {
+    sessionStorage.setItem("auth", "ok");
+    showContent();
+  } else {
     document.getElementById("error").innerText = "Identifiants incorrects";
   }
 }
 
+// ===== LOGOUT =====
 function logout() {
   sessionStorage.removeItem("auth");
   location.reload();
 }
 
+// ===== AFFICHAGE CONTENU =====
 function showContent() {
   document.getElementById("loginBox").style.display = "none";
   document.getElementById("contentBox").style.display = "block";
 }
 
+// ===== AUTO-CONNEXION SI SESSION ACTIVE =====
 if (sessionStorage.getItem("auth") === "ok") {
   showContent();
 }
 </script>
 
+
 </body>
 </html>
+
