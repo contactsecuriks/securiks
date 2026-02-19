@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Total caisse - dupont</title>
+<title>Total caisse - martin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body{font-family:Arial;background:#111;color:#fff}
@@ -32,16 +32,16 @@ button{background:#4CAF50;color:#000;font-weight:bold;cursor:pointer}
 <!-- CONTENU -->
 <div class="card" id="contentBox">
   <h1>Total caisse</h1>
-  <div class="value">TOTAL : 55 &euro;</div>
+  <div class="value">TOTAL : 165 &euro;</div>
   <div class="value">CB : 0 &euro;</div>
-  <div class="value">ESP&Egrave;CES : 55 &euro;</div>
-  <div class="small">Derni&egrave;re mise &agrave; jour : 19/02/2026 00:45</div>
+  <div class="value">ESP&Egrave;CES : 165 &euro;</div>
+  <div class="small">Derni&egrave;re mise &agrave; jour : 19/02/2026 01:13</div>
   <button class="logout" onclick="logout()">D&eacute;connexion</button>
 </div>
 
 <script>
 const ADMIN = "admin";
-const PASSWORD_HASH = "7c2aec3ebe1354eba245dc1f7626fa9d7c28853fa4657aeaedc7064f0fefea15"; // mdp = 000
+const PASSWORD_HASH = "9af15b336e6a9619928537df30b2e6a2376569fcf9d7e773eccede65606529a0"; // mdp = 000
 
 async function sha256(text) {
   const data = new TextEncoder().encode(text);
@@ -71,7 +71,6 @@ function showContent() {
 }
 </script>
 
-<!-- run:20260219004550 -->
+<!-- run:20260219011350 -->
 </body>
-
 </html>
