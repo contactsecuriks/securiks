@@ -10,6 +10,7 @@ body{font-family:Arial;background:#111;color:#fff}
 h1,h2{color:#4CAF50}
 input,button{width:100%;padding:12px;margin-top:12px;border-radius:6px;border:none;font-size:16px}
 button{background:#4CAF50;color:#000;font-weight:bold;cursor:pointer}
+.error{color:#ff5252;margin-top:10px}
 .value{font-size:1.8em;margin:10px}
 .small{opacity:.7}
 .logout{background:#ff5252;margin-top:20px}
@@ -19,37 +20,39 @@ table{width:100%;border-collapse:collapse;margin-top:10px}
 td,th{border-bottom:1px solid #444;padding:6px}
 </style>
 </head>
+
 <body>
 
 <div class="login" id="loginBox">
-<h2>AccÃ¨s sÃ©curisÃ©</h2>
-<input id="user" placeholder="Identifiant">
-<input id="pass" type="password" placeholder="Mot de passe">
-<button onclick="login()">Connexion</button>
+  <h2>Acc&egrave;s s&eacute;curis&eacute;</h2>
+  <input id="user" placeholder="Identifiant">
+  <input id="pass" type="password" placeholder="Mot de passe">
+  <button onclick="login()">Connexion</button>
+  <div class="error" id="error"></div>
 </div>
 
 <div class="card" id="contentBox">
-<h1>Total caisse</h1>
-<div class="value">TOTAL : 20 â‚¬</div>
-<div class="value">CB : 0 â‚¬</div>
-<div class="value">ESPÃˆCES : 20 â‚¬</div>
+  <h1>Total caisse</h1>
+  <div class="value">TOTAL : 20 &euro;</div>
+  <div class="value">CB : 0 &euro;</div>
+  <div class="value">ESP&Egrave;CES : 20 &euro;</div>
 
-<button onclick="toggleProduits()">Produits vendus</button>
+  <button onclick="toggleProduits()">Produits vendus</button>
 
-<div id="produitsBox">
-<table>
-<tr><th>Produit</th><th>QtÃ©</th></tr>
-<tr><td>ENTREE ENF</td><td>1</td></tr>
-</table>
-</div>
+  <div id="produitsBox">
+    <table>
+      <tr><th>Produit</th><th>Qt&eacute;</th></tr>
+      <tr><td>ENTREE ENF</td><td>1</td></tr>
+    </table>
+  </div>
 
-<div class="small">DerniÃ¨re mise Ã  jour : 20/02/2026 16:53</div>
-<button class="logout" onclick="logout()">DÃ©connexion</button>
+  <div class="small">Derni&egrave;re mise &agrave; jour : 20/02/2026 16:54</div>
+  <button class="logout" onclick="logout()">D&eacute;connexion</button>
 </div>
 
 <script>
-const ADMIN="admin";
-const PASSWORD_HASH="7c2aec3ebe1354eba245dc1f7626fa9d7c28853fa4657aeaedc7064f0fefea15";
+const ADMIN = "admin";
+const PASSWORD_HASH = "7c2aec3ebe1354eba245dc1f7626fa9d7c28853fa4657aeaedc7064f0fefea15";
 
 async function sha256(text){
 const data=new TextEncoder().encode(text);
@@ -62,18 +65,25 @@ const u=document.getElementById("user").value;
 const p=document.getElementById("pass").value;
 const h=await sha256(p);
 if(u===ADMIN && h===PASSWORD_HASH){
-document.getElementById("loginBox").style.display="none";
-document.getElementById("contentBox").style.display="block";
+showContent();
+}else{
+document.getElementById("error").innerText="Identifiants incorrects";
 }
 }
 
 function logout(){location.reload();}
+
+function showContent(){
+document.getElementById("loginBox").style.display="none";
+document.getElementById("contentBox").style.display="block";
+}
+
 function toggleProduits(){
 var box=document.getElementById("produitsBox");
-box.style.display = (box.style.display==="none")?"block":"none";
+box.style.display=(box.style.display==="none")?"block":"none";
 }
 </script>
 
-<!-- run:20260220165320 -->
+<!-- run:20260220165410 -->
 </body>
 </html>
