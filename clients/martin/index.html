@@ -74,15 +74,21 @@ tr:last-child td{border-bottom:none}
 
 <div id="tranchesBox" style="display:none">
 <table>
-<tr><th>Tranche</th><th>Montant</th></tr>
-<tr><td>12h&ndash;14h</td><td>0 &euro;</td></tr>
-<tr><td>14h&ndash;18h</td><td>25.5 &euro;</td></tr>
-<tr><td>18h&ndash;22h</td><td>0 &euro;</td></tr>
+<tr>
+<th>Tranche</th>
+<th>Montant</th>
+<th>% CB</th>
+<th>% Esp&egrave;ces</th>
+</tr>
+<tr><td>6h&ndash;12h</td><td>0 &euro;</td><td>0 %</td><td>0 %</td></tr>
+<tr><td>12h&ndash;14h</td><td>0 &euro;</td><td>0 %</td><td>0 %</td></tr>
+<tr><td>14h&ndash;18h</td><td>25.5 &euro;</td><td>7.8 %</td><td>92.2 %</td></tr>
+<tr><td>18h&ndash;00h</td><td>0 &euro;</td><td>0 %</td><td>0 %</td></tr>
 </table>
 </div>
 </div>
 
-<div class="small">Derni&egrave;re mise &agrave; jour : 20/02/2026 19:39</div>
+<div class="small">Derni&egrave;re mise &agrave; jour : 20/02/2026 19:40</div>
 <button class="logout" onclick="logout()">D&eacute;connexion</button>
 
 </div>
@@ -112,6 +118,6 @@ function toggleProduits(){var b=document.getElementById("produitsBox");b.style.d
 function toggleTranches(){var b=document.getElementById("tranchesBox");b.style.display=(b.style.display==="none")?"block":"none";}
 </script>
 
-<!-- run:20260220193921 -->
+<!-- run:20260220194016 -->
 </body>
 </html>
