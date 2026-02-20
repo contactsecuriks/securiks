@@ -6,71 +6,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body{font-family:Arial;background:#111;color:#fff}
-.login,.card{max-width:420px;margin:80px auto;background:#1e1e1e;padding:25px;border-radius:10px;text-align:center}
+.login,.card{max-width:500px;margin:80px auto;background:#1e1e1e;padding:25px;border-radius:10px;text-align:center}
 h1,h2{color:#4CAF50}
 input,button{width:100%;padding:12px;margin-top:12px;border-radius:6px;border:none;font-size:16px}
 button{background:#4CAF50;color:#000;font-weight:bold;cursor:pointer}
-.error{color:#ff5252;margin-top:10px}
-.value{font-size:1.8em;margin:10px}
-.small{opacity:.7}
 .logout{background:#ff5252;margin-top:20px}
-#contentBox{display:none}
+.value{font-size:1.5em;margin:10px}
+.small{opacity:.7}
+table{width:100%;margin-top:20px;border-collapse:collapse}
+td,th{border-bottom:1px solid #444;padding:8px}
+.hidden{display:none}
 </style>
 </head>
-
 <body>
 
-<!-- LOGIN -->
 <div class="login" id="loginBox">
-  <h2>Acc&egrave;s s&eacute;curis&eacute;</h2>
-  <input id="user" placeholder="Identifiant">
-  <input id="pass" type="password" placeholder="Mot de passe">
-  <button onclick="login()">Connexion</button>
-  <div class="error" id="error"></div>
+<h2>AccÃ¨s sÃ©curisÃ©</h2>
+<input id="user" placeholder="Identifiant">
+<input id="pass" type="password" placeholder="Mot de passe">
+<button onclick="login()">Connexion</button>
 </div>
 
-<!-- CONTENU -->
-<div class="card" id="contentBox">
-  <h1>Total caisse</h1>
-  <div class="value">TOTAL : 25 &euro;</div>
-  <div class="value">CB : 15 &euro;</div>
-  <div class="value">ESP&Egrave;CES : 10 &euro;</div>
-  <div class="small">Derni&egrave;re mise &agrave; jour : 20/02/2026 16:28</div>
-  <button class="logout" onclick="logout()">D&eacute;connexion</button>
+<div class="card hidden" id="contentBox">
+<h1>Total caisse</h1>
+<div class="value">TOTAL : 25 â‚¬</div>
+<div class="value">CB : 15 â‚¬</div>
+<div class="value">ESPÃˆCES : 10 â‚¬</div>
+<button onclick="toggleProduits()">Produits vendus</button>
+
+<div id="produitsBox" class="hidden">
+<table>
+<tr><th>Produit</th><th>QtÃ©</th></tr>
+<tr><td>ENTREE ENF</td><td>2</td></tr>
+</table>
+</div>
+
+<div class="small">DerniÃ¨re mise Ã  jour : 20/02/2026 16:29</div>
+<button class="logout" onclick="logout()">DÃ©connexion</button>
 </div>
 
 <script>
-const ADMIN = "admin";
-const PASSWORD_HASH = "7c2aec3ebe1354eba245dc1f7626fa9d7c28853fa4657aeaedc7064f0fefea15"; // mdp = 000
+const ADMIN="admin";
+const PASSWORD_HASH="7c2aec3ebe1354eba245dc1f7626fa9d7c28853fa4657aeaedc7064f0fefea15";
 
-async function sha256(text) {
-  const data = new TextEncoder().encode(text);
-  const hash = await crypto.subtle.digest("SHA-256", data);
-  return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2,"0")).join("");
+async function sha256(text){
+const data=new TextEncoder().encode(text);
+const hash=await crypto.subtle.digest("SHA-256",data);
+return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,"0")).join("");
 }
 
-async function login() {
-  const u = document.getElementById("user").value;
-  const p = document.getElementById("pass").value;
-  const h = await sha256(p);
-
-  if (u === ADMIN && h === PASSWORD_HASH) {
-    showContent();
-  } else {
-    document.getElementById("error").innerText = "Identifiants incorrects";
-  }
+async function login(){
+const u=document.getElementById("user").value;
+const p=document.getElementById("pass").value;
+const h=await sha256(p);
+if(u===ADMIN && h===PASSWORD_HASH){
+document.getElementById("loginBox").style.display="none";
+document.getElementById("contentBox").classList.remove("hidden");
+}
 }
 
-function logout() {
-  location.reload();
-}
-
-function showContent() {
-  document.getElementById("loginBox").style.display = "none";
-  document.getElementById("contentBox").style.display = "block";
+function logout(){location.reload();}
+function toggleProduits(){
+document.getElementById("produitsBox").classList.toggle("hidden");
 }
 </script>
 
-<!-- run:20260220162818 -->
+<!-- run:20260220162918 -->
 </body>
 </html>
