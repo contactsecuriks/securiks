@@ -42,7 +42,7 @@ td,th{border-bottom:1px solid #444;padding:6px}
   <div id="produitsBox">
     <table>
       <tr><th>Produit</th><th>Qt&eacute;</th></tr>
-      <tr><td>ENTREE ENF</td><td>1</td></tr>
+      <tr><td>ENTREE / PLAT</td><td>3</td></tr><tr><td>ENTREE ENF</td><td>1</td></tr>
     </table>
   </div>
 
@@ -72,18 +72,16 @@ document.getElementById("error").innerText="Identifiants incorrects";
 }
 
 function logout(){location.reload();}
-
 function showContent(){
 document.getElementById("loginBox").style.display="none";
 document.getElementById("contentBox").style.display="block";
 }
-
 function toggleProduits(){
 var box=document.getElementById("produitsBox");
 box.style.display=(box.style.display==="none")?"block":"none";
 }
 </script>
 
-<!-- run:20260220165721 -->
+<!-- run:20260220165734 -->
 </body>
 </html>
