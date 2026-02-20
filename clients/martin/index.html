@@ -45,20 +45,9 @@ tr:last-child td{border-bottom:none}
 <h1>Total caisse</h1>
 
 <div class="totaux">
-<div class="box">
-<h3>Total encaiss&eacute;</h3>
-<div class="amount total">58.5 &euro;</div>
-</div>
-
-<div class="box">
-<h3>Carte bancaire</h3>
-<div class="amount cb">10 &euro;</div>
-</div>
-
-<div class="box">
-<h3>Esp&egrave;ces</h3>
-<div class="amount especes">48.5 &euro;</div>
-</div>
+<div class="box"><h3>Total encaiss&eacute;</h3><div class="amount total">58.5 &euro;</div></div>
+<div class="box"><h3>Carte bancaire</h3><div class="amount cb">10 &euro;</div></div>
+<div class="box"><h3>Esp&egrave;ces</h3><div class="amount especes">48.5 &euro;</div></div>
 </div>
 
 <div class="section">
@@ -66,20 +55,14 @@ tr:last-child td{border-bottom:none}
 <button onclick="toggleTranches()">Tranches horaires</button>
 
 <div id="produitsBox" style="display:none">
-<table>
-<tr><th>Produit</th><th>Qt&eacute;</th></tr>
+<table><tr><th>Produit</th><th>Qt&eacute;</th></tr>
 <tr><td>ENTREE / PLAT</td><td>2</td></tr><tr><td>ENTREE ENF</td><td>8</td></tr><tr><td>JUS ENF</td><td>6</td></tr><tr><td>PLAT ENF</td><td>1</td></tr>
 </table>
 </div>
 
 <div id="tranchesBox" style="display:none">
 <table>
-<tr>
-<th>Tranche</th>
-<th>Montant</th>
-<th>% CB</th>
-<th>% Esp&egrave;ces</th>
-</tr>
+<tr><th>Tranche</th><th>Montant</th><th>% CB</th><th>% Esp&egrave;ces</th></tr>
 <tr><td>6h&ndash;12h</td><td>0 &euro;</td><td>0 %</td><td>0 %</td></tr>
 <tr><td>12h&ndash;14h</td><td>0 &euro;</td><td>0 %</td><td>0 %</td></tr>
 <tr><td>14h&ndash;18h</td><td>25.5 &euro;</td><td>7.8 %</td><td>92.2 %</td></tr>
@@ -90,34 +73,18 @@ tr:last-child td{border-bottom:none}
 
 <div class="small">Derni&egrave;re mise &agrave; jour : 20/02/2026 22:08</div>
 <button class="logout" onclick="logout()">D&eacute;connexion</button>
-
 </div>
 
 <script>
 const ADMIN="admin";
 const PASSWORD_HASH="7c2aec3ebe1354eba245dc1f7626fa9d7c28853fa4657aeaedc7064f0fefea15";
-
-async function sha256(t){
-const d=new TextEncoder().encode(t);
-const h=await crypto.subtle.digest("SHA-256",d);
-return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,"0")).join("");
-}
-
-async function login(){
-const u=document.getElementById("user").value;
-const p=document.getElementById("pass").value;
-const h=await sha256(p);
-if(u===ADMIN&&h===PASSWORD_HASH){
-document.getElementById("loginBox").style.display="none";
-document.getElementById("contentBox").style.display="block";
-}
-}
-
+async function sha256(t){const d=new TextEncoder().encode(t);const h=await crypto.subtle.digest("SHA-256",d);return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,"0")).join("");}
+async function login(){const u=document.getElementById("user").value;const p=document.getElementById("pass").value;const h=await sha256(p);if(u===ADMIN&&h===PASSWORD_HASH){document.getElementById("loginBox").style.display="none";document.getElementById("contentBox").style.display="block";}}
 function logout(){location.reload();}
 function toggleProduits(){var b=document.getElementById("produitsBox");b.style.display=(b.style.display==="none")?"block":"none";}
 function toggleTranches(){var b=document.getElementById("tranchesBox");b.style.display=(b.style.display==="none")?"block":"none";}
 </script>
 
-<!-- run:20260220220820 -->
+<!-- run:20260220220848 -->
 </body>
 </html>
